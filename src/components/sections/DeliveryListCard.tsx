@@ -5,6 +5,7 @@ import { cn, fetchJson } from '@/lib/utils'
 import { useQuery } from '@tanstack/react-query'
 import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import ItemId from '../ItemId'
 import Button from '../ui/Button'
 
 export default function DeliveryListCard() {
@@ -42,6 +43,7 @@ export default function DeliveryListCard() {
                 <table className="table-auto">
                     <thead>
                         <tr>
+                            <th className="text-left w-32">ID</th>
                             <th className="text-left">Package</th>
                             <th className="text-left">From</th>
                             <th className="text-left">To</th>
@@ -52,6 +54,12 @@ export default function DeliveryListCard() {
                         {data &&
                             data.docs.map((item) => (
                                 <tr key={item._id}>
+                                    <td>
+                                        <ItemId
+                                            value={item._id}
+                                            className="max-w-32"
+                                        />
+                                    </td>
                                     <td>{item.package.description}</td>
                                     <td>
                                         <span className="flex flex-col gap-1">
