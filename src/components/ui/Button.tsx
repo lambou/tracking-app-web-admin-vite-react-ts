@@ -22,7 +22,7 @@ export default function Button({
   iconRight,
   ...restProps
 }: ButtonProps) {
-  const [localVariant] = useState<VariantType>(variant ?? "default");
+  const localVariant = variant ?? "default";
   return (
     <button
       className={cn(

@@ -38,7 +38,9 @@ export default function PackageListCard() {
     return (
         <div className="flex flex-col gap-4 border rounded-md">
             {isLoading ? (
-                <Loader2 size={32} className="animate-spin" />
+                <div className="p-8 w-full flex items-center justify-center">
+                    <Loader2 size={32} className="animate-spin" />
+                </div>
             ) : (
                 <table className="table-auto">
                     <thead>
