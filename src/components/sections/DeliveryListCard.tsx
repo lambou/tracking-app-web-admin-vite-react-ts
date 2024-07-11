@@ -122,7 +122,7 @@ export default function DeliveryListCard() {
                 </span>
             )}
             {data && (
-                <div className="flex items-center justify-end gap-6 px-4 py-4">
+                <div className="flex items-center justify-between gap-6 px-4 py-4">
                     {hasPrevious && (
                         <Button
                             loading={isFetching}
@@ -142,6 +142,12 @@ export default function DeliveryListCard() {
                             Previous
                         </Button>
                     )}
+                    <div className="inline-flex items-center justify-center gap-2 text-base">
+                        <span>Page:</span>{' '}
+                        <span className="font-bold">{data.page}</span>
+                        <span>/</span>
+                        <span>{data.pages}</span>
+                    </div>
                     {hasNext && (
                         <Button
                             loading={isFetching}
